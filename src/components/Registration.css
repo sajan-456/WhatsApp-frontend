@@ -1,0 +1,224 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body { 
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    background: linear-gradient(135deg, #0d1418, #1e2a26, #2f3e46);
+    background-size: 300% 300%;
+    animation: gradientMove 14s ease infinite;
+    overflow: hidden;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Secure message info above form */
+.secure-info {
+    text-align: center;
+    margin: 20px auto;
+    animation: pulse 2s infinite;
+}
+
+.secure-info .lock-icon {
+    font-size: 40px;
+    color: #25d366;
+    margin-bottom: 10px;
+}
+
+.secure-info p {
+    font-size: 13px;
+    color: #ccc;
+    margin: 2px 0;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.8; }
+}
+
+/* Main section */
+.section {
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Form card */
+.main {  
+    width: 400px;
+    background: linear-gradient(145deg, rgba(36, 52, 41, 0.9), rgba(25, 35, 43, 0.85));
+    backdrop-filter: blur(12px);
+    text-align: center;
+    padding: 25px 20px;
+    border-radius: 20px;
+    color: white;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+    transition: transform 0.6s ease, box-shadow 0.6s ease, border 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.main:hover {
+    transform: rotateY(6deg) rotateX(3deg) scale(1.03);
+    border: 2px solid rgba(37, 211, 102, 0.6);
+    box-shadow: 0 12px 25px rgba(37, 211, 102, 0.6);
+}
+
+/* Floating animation for subtle effect */
+@keyframes floaty {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.title p {
+    color: #c9d1c8;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.title h2 {
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 10px 0 15px 0;
+    color: #25d366;
+    font-size: 30px;
+    letter-spacing: 1px;
+    text-shadow: 0 0 12px rgba(37, 211, 102, 0.7);
+}
+
+/* Form inputs */
+.registrationForm {
+    padding: 10px 15px;
+    margin-top: 20px;
+}
+
+.input-group {
+    position: relative;
+    width: 100%;
+}
+
+.input-group .icon {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    color: #25d366;
+    font-size: 18px;
+    pointer-events: none;
+}
+
+.input-group input {
+    height: 42px;
+    width: 100%;
+    margin-bottom: 14px;
+    padding-left: 40px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.input-group input:hover, 
+.input-group input:focus {
+    box-shadow: 0 0px 10px 3px rgba(37, 211, 102, 0.6);
+    background: rgba(255, 255, 255, 0.12);
+    transform: scale(1.02);
+}
+
+.input-group input::placeholder {
+    color: #aaa;
+    font-size: 13px;
+}
+
+/* Submit button */
+.registrationForm button {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    height: 42px;
+    margin-top: 12px;
+    margin-bottom: 8px;
+    font-weight: bold;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #25d366, #128c7e);
+    color: white;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.registrationForm button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.7);
+}
+
+/* Ripple effect */
+.registrationForm button::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.7);
+    opacity: 0;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    pointer-events: none;
+}
+
+.registrationForm button:active::after {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(25);
+    transition: transform 0.6s ease, opacity 1s ease;
+}
+
+/* Links & Terms */
+.registrationForm p {
+    font-size: 13px;
+    margin-top: 10px;
+    color: #ccc;
+}
+
+.registrationForm a {
+    color: #25d366;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.registrationForm a:hover {
+    text-decoration: underline;
+    text-shadow: 0 0 8px rgba(37, 211, 102, 0.9);
+}
+
+#term {
+    color: #888;
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+    .main {
+        width: 90%;
+        padding: 18px;
+    }
+
+    .title h2 {
+        font-size: 24px;
+    }
+}
