@@ -121,3 +121,21 @@
   cursor: pointer;
   font-weight: bold;
 }
+.backArrow{
+  display: none;
+}
+@media screen and (max-width:450px) {
+  .pageProfile{
+    padding: 5px;
+  }
+  .backArrow{
+    display: block;
+    margin-right: 10px;
+    font-size: 20px;
+    color: white;
+  }
+  .chatMessages{
+    width: 100%;
+    padding: 0px 5px;
+  }
+}

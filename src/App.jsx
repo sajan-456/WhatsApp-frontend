@@ -5,11 +5,14 @@ import Dashbord from './components/Dashbord'
 import ProtectedRouter from './components/ProtectedRouter';
 import Friend from './pages/Friend';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Context from './Context';
+import { useState } from 'react';
 function App() {
-
+  const [shareData, setShareData]= useState(null);
 
   return (
     <>
+ <Context.Provider value={{shareData,setShareData}}>
 <BrowserRouter>
       <Routes>
         <Route element={<Registration />} path="/registration" />
@@ -26,7 +29,7 @@ function App() {
       </Routes>
     </BrowserRouter>     
 
-
+</Context.Provider>
     </>
   )
 }

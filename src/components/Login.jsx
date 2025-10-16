@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import './Registration.css';
 import { Link, useNavigate } from "react-router-dom";
 import { FaPhone, FaLock } from "react-icons/fa";
-const API =import.meta.env.VITE_BACKEND_URL;
+const API = import.meta.env.VITE_BACKEND_URL;
 function Login() {
     let navigate = useNavigate();
 
@@ -36,11 +36,11 @@ function Login() {
             if (!res.ok) {
                 // backend ka message use karo
                 alert(data.message || "Login failed");
-                
+
                 if (res.status === 401) {
                     setFormData({ mobileNumber: formData.mobileNumber, password: '' });
-                }else{
-                    setFormData({mobileNumber: '', password: ''})
+                } else {
+                    setFormData({ mobileNumber: '', password: '' })
                 }
 
                 return;

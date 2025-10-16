@@ -6,7 +6,11 @@ import { useState, useRef } from "react";
 import { RxCross1 } from "react-icons/rx";
 import { FaCross } from "react-icons/fa";
 import { FaRegEdit } from "react-icons/fa";
+import { FaEdit } from "react-icons/fa";
+import {useContext} from 'react'
+
 const API =import.meta.env.VITE_BACKEND_URL;
+import Context from '../Context'
 
 function Dashbord() {
 
@@ -19,6 +23,15 @@ function Dashbord() {
     const [showProfile, setShowProfile] = useState(false);
     const [showInfo, setInfo] = useState(false)
     let navigate = useNavigate();
+     const [pageDisplay, setPage]= useState(false)
+
+    const {shareData, setShareData} = useContext(Context);
+    useEffect(()=>{
+        if(shareData){
+            setPage(false)
+        }
+    },[shareData])
+
 
     let user = JSON.parse(sessionStorage.getItem('user'))
     //  console.log(id,"id")
@@ -100,7 +113,7 @@ function Dashbord() {
            
             return updated;
         });
-         navigate('/dashbord')
+         navigate('/')
     }
 
     function logOut() {
@@ -108,11 +121,12 @@ function Dashbord() {
         sessionStorage.removeItem('user')
         navigate('/login')
     }
-
+    
+    
     return (
         <>
             <section>
-                <aside>
+                <aside className={pageDisplay ? 'asideHide': ''}>
                     <div className="searchBox">
 
                         {/* Profile Toggle Button */}
@@ -147,7 +161,9 @@ function Dashbord() {
                         </div>
                         <div className="add">
                             <h2>Chats</h2>
+
                             <div className="newChat">
+                                <h1 className="editLogo" onClick={addFriend}><FaEdit /><span>New Chat</span></h1>
                                 <h1
                                     id="add"
                                     onMouseEnter={() => setInfo(true)}
@@ -194,14 +210,14 @@ function Dashbord() {
 
 
                     {
-                        Array.isArray(friendsData) && friendsData.map((e) => {
+                        Array.isArray(friendsData) && friendsData.map((e,i) => {
                             return (
                                 <>
-                                    <div key={`${e._id}`} className="contact" >
+                                     <div key={e._id ?? i} className="contact" onClick={()=>setShareData(0)}>
                                         <div className="logo">
                                             {setIcon(e.fname, e.lname)}
                                         </div>
-                                        <Link to={`/friend/${e.mobileNumber}`}>
+                                        <Link to={`/friend/${e.mobileNumber}`} onClick={()=>setPage(true)}>
                                             <h2 className="name">
                                                 {e.fname} {e.lname}
                                             </h2></Link>
@@ -218,7 +234,7 @@ function Dashbord() {
 
 
                 </aside>
-                <div className="page">
+                <div className={`page ${pageDisplay ? 'show': ''}`}>
                     {/* <h3 className="chatboxHead"> chat Box</h3> */}
                     <Outlet />
 

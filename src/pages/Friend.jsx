@@ -1,18 +1,24 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useContext } from "react";
 import { io } from "socket.io-client";
 import "./friend.css";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { IoMdArrowBack } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
+import Context from "../Context";
 
 const socket = io("https://whatsapp-backend-y5rr.onrender.com");
 
 function Friend() {
   const [friendInfo, setFriendInfo] = useState();
-  const { mobileNumber } = useParams()
-  console.log(mobileNumber)
- const messagesEndRef = useRef(null);
+  const { mobileNumber } = useParams();
 
-   
- 
+  const messagesEndRef = useRef(null);
+  const page=useRef()
+  const friendDashbord= useRef();
+  const {setShareData}=useContext(Context);
+function backToDashbord(){
+  setShareData(1);
+}
 
   useEffect(() => {
     let local = JSON.parse(localStorage.getItem(`${mobileNumber}`))
@@ -23,22 +29,22 @@ function Friend() {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
   const [clientId, setClientId] = useState(null);
-  const [roomId, setRoomId]= useState();
+  const [roomId, setRoomId] = useState();
 
- 
 
-useEffect(()=>{
-   let userId = JSON.parse(sessionStorage.getItem('user'))
+
+  useEffect(() => {
+    let userId = JSON.parse(sessionStorage.getItem('user'))
     setClientId(userId._id);
-    console.log(clientId, "userIddd")
+    //console.log(clientId, "userIddd")
 
-},[]);
+  }, []);
 
-useEffect(() => {
+  useEffect(() => {
     if (clientId && friendInfo) {
       const id = [clientId, friendInfo._id].sort().join("_");
       setRoomId(id);
-       console.log(id,"room")
+      //console.log(id, "room")
       // join the private room
       socket.emit("join_private_chat", { roomId: id, userId: clientId });
     }
@@ -57,11 +63,11 @@ useEffect(() => {
     };
   }, []);
 
- useEffect(() => {
-    if(messagesEndRef.current){
-        messagesEndRef.current.scrollTop = messagesEndRef.current.scrollHeight;
+  useEffect(() => {
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollTop = messagesEndRef.current.scrollHeight;
     }
-}, [messages]);
+  }, [messages]);
 
 
 
@@ -70,15 +76,17 @@ useEffect(() => {
     if (message.trim() === "") return;
 
     // send message with id
-    socket.emit("send_private_message", {roomId, text: message, from: clientId });
+    socket.emit("send_private_message", { roomId, text: message, from: clientId });
 
     setMessage("");
   };
 
   const getInitials = (fname, lname) => {
-  if (!fname || !lname) return "";
-  return `${fname.charAt(0)}${lname.charAt(0)}`;
-};
+    if (!fname || !lname) return "";
+    return `${fname.charAt(0)}${lname.charAt(0)}`;
+  };
+
+ 
   return (
     <>
       <div className="friendProfile">
@@ -86,6 +94,10 @@ useEffect(() => {
         {
           friendInfo && (
             <><div className="pageProfile">
+              <Link to={'/'}>
+                <span className="backArrow"><IoMdArrowBack onClick={backToDashbord}/></span>
+              </Link>
+
               <div className="pic">
                 {getInitials(friendInfo.fname, friendInfo.lname)}
               </div>
