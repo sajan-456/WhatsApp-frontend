@@ -127,15 +127,30 @@
 @media screen and (max-width:450px) {
   .pageProfile{
     padding: 5px;
+    background-color:rgb(22, 26, 26);
   }
   .backArrow{
     display: block;
-    margin-right: 10px;
-    font-size: 20px;
+    margin-right: 15px;
+    margin-left: 5px;
+    font-size: 25px;
     color: white;
   }
   .chatMessages{
     width: 100%;
-    padding: 0px 5px;
+    padding: 0px 10px;
+    background-color:rgb(22, 26, 26);
+  }
+  .pic{
+    height: 35px;
+    width: 35px;
+  }
+  .pageProfile h2{
+    font-size: 20px;
+  }
+  .messagesBox{
+    height: 90%;
+    margin-top: 58px;
+    margin-bottom: 74px;
   }
 }

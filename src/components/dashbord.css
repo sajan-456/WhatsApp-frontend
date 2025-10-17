@@ -7,9 +7,11 @@ body {
     display: block;
     color: white;
 }
-button{
+
+button {
     cursor: pointer;
 }
+
 section {
     height: 100vh;
     width: 100%;
@@ -18,7 +20,7 @@ section {
 }
 
 .searchBox {
-   height: 50px;
+    height: 50px;
     width: 100%;
     position: sticky;
     top: 0px;
@@ -31,9 +33,11 @@ section {
 .searchBox h2 {
     text-align: start;
 }
-.search{
+
+.search {
     width: 90%;
 }
+
 .search input {
     height: 30px;
     border: 1px solid darkgray;
@@ -54,77 +58,88 @@ aside {
     flex-direction: column;
     align-items: center;
     gap: 5px;
-    
+
     border-right: 1px solid black;
 }
-.profile h1{
- font-size: 18px;
- font-weight: 400;
- color: orange;
+
+.profile h1 {
+    font-size: 18px;
+    font-weight: 400;
+    color: orange;
 }
-.editLogo{
+
+.editLogo {
     font-size: 18px;
     font-weight: 300;
-    color:darkgray;
+    color: darkgray;
     display: flex;
     align-items: center;
-    gap:3px;
+    gap: 3px;
     display: none;
     padding-left: 5px;
 }
-.editLogo span{
+
+.editLogo span {
     font-size: 11px;
 }
-.add{
+
+.add {
     height: 50px;
     margin: 5px 0px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-#add{
+
+#add {
     cursor: pointer;
     font-size: 22px;
     height: 22px;
     width: 22px;
     border-radius: 50%;
 }
-#add:hover{
-  background-color:rgb(82, 82, 82);
+
+#add:hover {
+    background-color: rgb(82, 82, 82);
 
 }
-.addFriendNumber{
+
+.addFriendNumber {
     width: 200px;
-    box-shadow:0px 1px 2px 2px rgb(31, 31, 31);
+    box-shadow: 0px 1px 2px 2px rgb(31, 31, 31);
     padding: 5px;
     text-align: center;
     border-radius: 5px;
-    background-color:rgba(59, 59, 59);
-    position:absolute;
-    top:40px;
+    background-color: rgba(59, 59, 59);
+    position: absolute;
+    top: 40px;
     left: 40px;
     padding-bottom: 20px;
 }
-.addFriendNumber p{
+
+.addFriendNumber p {
     line-height: 10px;
     justify-self: right;
     cursor: pointer;
 }
-.addFriendNumber input{
+
+.addFriendNumber input {
     height: 30px;
     width: 100%;
     margin: 5px 0px;
     margin-top: 2px;
-   border: none;
-    background-color:rgba(255, 255, 255, 0.1);
+    border: none;
+    background-color: rgba(255, 255, 255, 0.1);
     border-radius: 5px;
     color: aliceblue;
     padding-left: 5px;
 }
-.addFriendNumber input::placeholder{
+
+.addFriendNumber input::placeholder {
     color: rgb(183, 182, 182);
 }
-.addFriendNumber button{
+
+.addFriendNumber button {
     width: 50px;
     background-color: transparent;
     border: 1px solid darkgray;
@@ -134,30 +149,35 @@ aside {
     font-weight: 100;
     font-size: 12px;
 }
-.info{
+
+.info {
     width: 100px;
     font-size: 10px;
     position: absolute;
-    bottom:5px;
+    bottom: 5px;
     background-color: rgb(47, 47, 47);
     padding: 5px;
     box-shadow: 0px 0px 1px 1px black;
     border-radius: 5px;
-     transition: 0.6s ease;
+    transition: 0.6s ease;
 }
-.info p{
+
+.info p {
     font-size: 12px;
     margin: 2px;
 }
-.profile1{
+
+.profile1 {
     text-align: left;
     height: 25px;
     align-content: center;
 }
-.profile1 span{
+
+.profile1 span {
     font-weight: 500;
 }
-.profileToggle{
+
+.profileToggle {
     height: 25px;
     width: 25px;
     border: none;
@@ -167,31 +187,36 @@ aside {
     cursor: pointer;
     margin: 0px 5px;
 }
-.profileBox{
+
+.profileBox {
     position: absolute;
     width: 230px;
-    background-color: rgb(47,47,47);
+    background-color: rgb(47, 47, 47);
     box-shadow: 0px 1px 2px 2px rgb(32, 32, 32);
     padding: 5px;
     border-radius: 5px;
     padding-bottom: 70px;
     text-align: left;
 }
-#cross{
+
+#cross {
     text-align: right;
     cursor: pointer;
 }
-.profileBox h2{
+
+.profileBox h2 {
     font-size: 17px;
     font-weight: 500;
     margin-bottom: 5px;
 }
-.profileBox p{
+
+.profileBox p {
     margin-bottom: 2px;
     font-size: 15px;
     font-weight: 200;
 }
-.profileBox button{
+
+.profileBox button {
     padding: 2px 4px;
     background-color: transparent;
     border: 1px solid lightgray;
@@ -218,14 +243,17 @@ aside {
     cursor: pointer;
     transition: 0.4s ease;
 }
-a{
+
+a {
     text-decoration: none;
     color: white;
 }
-.link{
+
+.link {
     justify-self: left;
     background-color: aqua;
 }
+
 .contact:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
@@ -238,13 +266,17 @@ a{
     text-align: center;
     align-content: center;
 }
-.removeFriend{
-  margin-left: auto;
-  color: rgb(47, 47, 47);;
+
+.removeFriend {
+    margin-left: auto;
+    color: rgb(47, 47, 47);
+    ;
 }
-.removeFriend:hover{
+
+.removeFriend:hover {
     color: white;
 }
+
 .name {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 20px;
@@ -263,7 +295,7 @@ a{
     height: 100vh;
     background-image: url('../assets/chatBox_wallpaper.jpg');
     background-size: contain;
-    overflow:hidden;
+    overflow: hidden;
 }
 
 .page p {
@@ -271,99 +303,164 @@ a{
     color: aliceblue;
     font-size: 25px;
 }
-@media  screen and (max-width:480px) {
-    aside{
+
+@media screen and (max-width:480px) {
+    aside {
         width: 100%;
-        padding-top: 10px;
+        background-color: rgb(22, 26, 26);
     }
-    .asideHide{
-       display: none;
-    }
-    .page.show{
-          display:block;
-    }
-    .page{
+
+    .asideHide {
         display: none;
     }
+
+    .page.show {
+        display: block;
+    }
+
+    .page {
+        display: none;
+    }
+
     .profile1 {
         justify-self: right;
+
     }
-    .profile1 span{
+
+    .profileToggle {
+        margin: 10px;
+        height: 30px;
+        width: 30px;
+        -webkit-text-stroke: 0.2px rgb(255, 253, 253);
+        color: rgb(21, 107, 40);
+        font-weight: 600;
+       
+    }
+
+    .profile1 span {
         display: none;
     }
-    .profileBox{
+
+    .profileBox {
         left: 0px;
-        top:0px;
+        top: 0px;
         height: 100vh;
         width: 100%;
-        padding: 10px;
+        padding: 20px;
         border-radius: 0px;
+        background-color: rgb(22, 26, 26);
     }
-    #cross{
-        font-size: 15px;
+
+    #cross {
+        font-size: 18px;
     }
-    .profileBox h2{
+
+    .profileBox h2 {
         margin-top: 10px;
-        color: rgb(123, 123, 123);
+        color: rgb(200, 171, 241);
+        font-size: 25px;
     }
-    .profileBox strong{
-        font-size: 14px;
+
+    .profileBox strong {
+        font-size: 18px;
         color: darkgray;
     }
-    .profileBox p{
-        font-size: 12px;
-        color:lightgray
+
+    .profileBox p {
+        font-size: 16px;
+        color: lightgray;
+        line-height:20px;
     }
-    .profile1 button{
-        bottom:50px
+
+    .profile1 button {
+        bottom: 100px
     }
-    .editLogo{
-        display:flex;
+
+    .editLogo {
+        display: flex;
+        margin: 10px 5px;
+        font-size: 20px;
     }
-    .addFriendNumber{
+
+    .addFriendNumber {
         width: 95%;
         left: 10px;
         box-shadow: none;
-        top:45px;
+        top: 45px;
+        background-color: rgb(38, 42, 42);
+        ;
     }
-    .addFriendNumber p{
-        margin: 5px;
-        font-size: 18px;
+
+    .addFriendNumber p {
+        margin: 10px;
+        font-size: 22px;
     }
-    .addFriendNumber input{
-        height: 35px;
+
+    .addFriendNumber input {
+        height: 40px;
+        width: 90%;
+        border-radius: 10px;
+        background-color: rgb(58, 63, 63);
     }
-    .addFriendNumber button{
+
+    .addFriendNumber button {
         margin-top: 10px;
         width: 70px;
         padding: 5px;
+        font-weight: 600;
+        border: none;
+        box-shadow: 0px 0px 4px 1px rgb(22, 26, 26);;
     }
-    .add{
+
+    .add {
         height: 35px;
     }
-    .add h2{
+
+    .add h2 {
         position: absolute;
-        top:5px;
+        top: 5px;
+        margin: 3px;
     }
-    #add{
+
+    #add {
         display: none;
     }
-    .search{
-        width: 95%;
+
+    .search {
+        width: 88%;
+        margin-bottom: 5px;
     }
-    .search input{
-        height: 35px;
+
+    .search input {
+        height: 40px;
         border: none;
+        border-radius: 20px;
+        padding-left: 10px;
     }
-    .logo{
+
+    .logo {
+        height: 35px;
+        width: 35px;
         color: silver;
-        padding: 1px;
-        background-color:rgb(53, 58, 43);
+        font-weight: 600;
+        -webkit-text-stroke: 1px rgb(39, 25, 234);
+        color: white;
     }
-    .removeFriend{
-        color:darkgray;
+
+    .contact {
+        width: 90%;
+        box-shadow: 0px 1px 1px 1px black;
+        margin-top: 5px;
+
     }
-    .page{
+     .name{
+        font-size: 18px;
+     }
+    .removeFriend {
+        color: darkgray;
+    }
+
+    .page {
         width: 100%;
     }
 
