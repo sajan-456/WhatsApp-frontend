@@ -26,7 +26,7 @@ function Login() {
         }
 
         try {
-            let res = await fetch(`${API}/login`, {
+            let res = await fetch(`https://whatsapp-backend-y5rr.onrender.com/login`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData)

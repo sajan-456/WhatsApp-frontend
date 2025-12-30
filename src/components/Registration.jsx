@@ -23,7 +23,7 @@ function Registration() {
         console.log(formData);
 
         try {
-            await fetch(`${API}/add-user`, {
+            await fetch(`https://whatsapp-backend-y5rr.onrender.com/add-user`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

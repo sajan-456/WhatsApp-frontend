@@ -62,7 +62,7 @@ function Dashbord() {
     async function sendNumber() {
         console.log(friendNumber)
 
-        let res = await fetch(`${API}/add-friend`, {
+        let res = await fetch(`https://whatsapp-backend-y5rr.onrender.com/add-friend`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'Application/json'

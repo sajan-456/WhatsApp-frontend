@@ -331,9 +331,11 @@ a {
         margin: 10px;
         height: 30px;
         width: 30px;
-        -webkit-text-stroke: 0.2px rgb(255, 253, 253);
-        color: rgb(21, 107, 40);
+        /* -webkit-text-stroke: 0.2px rgb(255, 253, 253);
+        color: rgb(21, 107, 40); */
         font-weight: 600;
+        background-color: #160231;
+        border: 1px solid white;
        
     }
 
@@ -386,9 +388,8 @@ a {
         width: 95%;
         left: 10px;
         box-shadow: none;
-        top: 45px;
+        top: 0px;
         background-color: rgb(38, 42, 42);
-        ;
     }
 
     .addFriendNumber p {
@@ -443,7 +444,7 @@ a {
         width: 35px;
         color: silver;
         font-weight: 600;
-        -webkit-text-stroke: 1px rgb(39, 25, 234);
+        /* -webkit-text-stroke: 1px rgb(39, 25, 234); */
         color: white;
     }
 
