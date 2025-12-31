@@ -213,19 +213,21 @@ function Dashbord() {
                         Array.isArray(friendsData) && friendsData.map((e,i) => {
                             return (
                                 <>
+                                <Link className="linkadd" to={`/friend/${e.mobileNumber}`} onClick={()=>setPage(true)}>
                                      <div key={e._id ?? i} className="contact" onClick={()=>setShareData(0)}>
                                         <div className="logo">
                                             {setIcon(e.fname, e.lname)}
                                         </div>
-                                        <Link to={`/friend/${e.mobileNumber}`} onClick={()=>setPage(true)}>
+                                        {/* <Link to={`/friend/${e.mobileNumber}`} onClick={()=>setPage(true)}> */}
                                             <h2 className="name">
                                                 {e.fname} {e.lname}
-                                            </h2></Link>
+                                            </h2>
+                                            {/* </Link> */}
                                         <div className="removeFriend">
                                             <RxCross1 onClick={() => removeFriend(e._id, e.mobileNumber)} />
                                         </div>
 
-                                    </div>
+                                    </div></Link>
                                 </>
                             )
                         })
